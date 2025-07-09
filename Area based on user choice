@@ -1,0 +1,29 @@
+#include<stdio.h>
+int main(){
+    int area;
+    float a1,side,rad,l,b;
+    printf("i)Area of circle\nii)Area of square\niii)Area of rectangle");
+    scanf("%d",&area);
+    switch(area)
+{
+case 1:
+printf("\n Enter radius:");
+scanf("%f",&rad);
+a1=3.14*rad*rad;
+printf("\n The area of circle:%f",a1);
+break;
+case 2:
+printf("\n Enter side:");
+scanf("%f",&side);
+a1=side*side;
+printf("\n The area of square:%f",a1);
+break;
+case 3:
+printf("\n Enter length and breadth:");
+scanf("%f %f",&l,&b);
+a1=l*b;
+printf("\n The area of rectangle:%f",a1);
+break;
+default:
+printf("\n Invalid choice");}
+return 0;}
