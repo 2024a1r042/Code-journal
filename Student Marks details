@@ -1,0 +1,49 @@
+#include<stdio.h>
+struct student{
+    int rollno;
+    char name[30];
+    int marks[5];
+    int tmarks;
+};
+void PrintStudentDetails(struct Student *s,int n){
+    printf("Student Marks Details\n");
+    printf("%8s %15s %5s\n","rollno","name","tmarks");
+    for(int i=0; i<n; i++){
+        printf("%8d %15s %5d\n", s[i].rollno, s[i].name, s[i].tmarks);
+    }
+}
+int findLargestMarks(struct student *s, int n){
+    int max=0,index =-1;
+    for(int i=0; i<n; i++){
+        if(s[i].tmarks>max){
+            max = s[i].tmarks;
+            index =i;
+        }
+    }
+    return index;
+}
+int main(){
+    int n;
+printf("Enter array size:");
+scanf("%d",&n);
+struct student stu[n];
+for(int i=0;i<n;i++){
+    printf("Enter Roll No:");
+    scanf("%d",&stu[i].rollno);
+    printf("Enter name:");
+    fflush(stdin);
+    gets(stu[i].name);
+    printf("Enter 5 subject marks:");
+    stu[i].tmarks=0;
+for(int j=0;j<5;j++){
+    scanf("%d",&stu[i].marks[j]);
+    stu[i].tmarks+=stu[i].marks[j];
+}
+}
+printf("Student Marks Details\n");
+printf("%8s %15s %5s\n","Roll no","Name","Total Marks:");
+for(int i=0;i<n;i++){
+    printf("%8d %15s %5d\n", stu[i].rollno,stu[i].name,stu[i].tmarks);
+}
+return 0;
+}
