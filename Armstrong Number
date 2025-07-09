@@ -1,0 +1,40 @@
+//wap to print 1st 5 armstrong numbers
+#include<stdio.h>
+#include<math.h>
+int isArmstrong(int);
+int power(int,int);
+int main()
+{
+    int n=10, count = 0;
+    while(count<10){
+        if(isArmstrong(n)==1){
+            printf("%d",n);
+            count++;
+        }
+        n++; 
+    }
+    return 0; 
+}
+int power(int base, int pow){
+    int p=1;
+    for(int i=0; i<pow;i++){
+        p= p*base;
+    }
+    return p;
+}
+int isArmstrong(int num){
+    int digits = log10(num)+1;
+    int temp = num;
+    int sum = 0;
+    while(temp!=0){
+        int rem = temp%10;
+        sum = sum +power(rem, digits);
+        temp = temp%10;
+        sum = sum +power(rem, digits);
+        temp = temp/10;
+    }
+    if(sum == num)
+        return 1;
+     else
+        return 0;
+}
