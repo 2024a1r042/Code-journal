@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(){
+    int row,col,sum=0;
+    printf("Enter matrices' row and column size:");
+    scanf("%d%d",&row,&col);
+    int matrix1[row][col],matrix2[row][col];
+    printf("Enter elements in Matrix 1:\n");
+    for(int i=0;i<row;i++)
+        {
+        for(int j=0;j<col;j++){
+            scanf("%d",&matrix1[i][j]);}}
+            printf("Enter elements in Matrix 2:\n");
+    for(int i=0;i<row;i++)
+    {
+        for(int j=0;j<col;j++){
+            scanf("%d",&matrix2[i][j]);}
+    }
+     //logic to add two matrices.
+     printf("\nSum of matrices:");
+     for(int i=0;i<row;i++)
+     {
+        for(int j=0;j<col;j++){
+            int sum=matrix1[i][j]+matrix2[i][j];
+            printf("%d ",sum);
+        }
+     printf("\n");
+    }  
+    return 0;}
