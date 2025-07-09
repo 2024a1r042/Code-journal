@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main(){
+    int num,reversenum=0,rem,ognum;
+    scanf("%d",&num);
+    ognum=num;
+    while(num!=0){
+        rem=num%10;
+        reversenum=reversenum*10+rem;
+        num/=10;
+    }
+    if(ognum==reversenum){
+        printf("\n Pallindrome");
+    }else
+    {
+        printf("\n Not Pallindrome");
+    }
+    return 0;}
